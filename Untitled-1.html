@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>A Little Question for You 💗</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Falling hearts -->
+  <div id="hearts"></div>
+
+  <!-- Music button -->
+  <button id="musicBtn" class="music-btn">
+    ♫ Music
+  </button>
+
+  <main>
+
+    <!-- ================= INTRO ================= -->
+
+    <section id="intro" class="screen active">
+
+      <div class="card">
+
+        <div class="flower">🌷</div>
+
+        <p class="eyebrow">
+          A tiny website made just for you
+        </p>
+
+        <h1 id="introText"></h1>
+
+        <p class="subtext">
+          Take your time. There is something I really want to tell you.
+        </p>
+
+        <button class="primary" id="startBtn">
+          Open my message 💌
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= MESSAGE ================= -->
+
+    <section id="message" class="screen">
+
+      <div class="card">
+
+        <span class="mini-label">
+          Before I ask...
+        </span>
+
+        <h2>
+          There is something I want you to know.
+        </h2>
+
+        <p>
+          I don't know exactly how to say everything perfectly,
+          so I made this little place for it instead.
+        </p>
+
+        <p>
+          I love you. More than I probably know how to explain.
+          And I would really love the chance to get to know you more,
+          make you smile, support you, and be someone you can feel
+          comfortable with.
+        </p>
+
+        <p class="highlight">
+          So... I have one question for you. 
+        </p>
+
+        <button class="primary" id="questionBtn">
+          Ask me the question →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= QUESTION ================= -->
+
+    <section id="question" class="screen">
+
+      <div class="card question-card">
+
+        <div class="big-heart">
+          ♡
+        </div>
+
+        <p class="eyebrow">
+          Okay... here goes.
+        </p>
+
+        <h2>
+          Will you let me court you?
+        </h2>
+
+        <p class="subtext">
+          No pressure. Whatever your answer is, I'll respect it. 🌷
+        </p>
+
+        <div class="buttons">
+
+          <button class="yes-btn" id="yesBtn">
+            Yes, you may 💗
+          </button>
+
+          <button class="no-btn" id="noBtn">
+            No 😭
+          </button>
+
+        </div>
+
+        <p id="noMessage" class="no-message"></p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= YES ================= -->
+
+    <section id="yes" class="screen">
+
+      <div class="card celebration">
+
+        <div class="celebrate-icon">
+          🥹💗
+        </div>
+
+        <p class="eyebrow">
+          YOU SAID YES!
+        </p>
+
+        <h2>
+          Thank you for giving me a chance. 🌷
+        </h2>
+
+        <p>
+          I promise I won't take this opportunity for granted.
+          I want to take things slowly, genuinely, and respectfully.
+        </p>
+
+        <p>
+          I'll do my best to make you feel appreciated,
+          listened to, and cared for.
+          Let's make beautiful memories together. 
+        </p>
+
+        <button class="primary" id="surpriseBtn">
+          One more thing... ✨
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= SURPRISE ================= -->
+
+    <section id="surprise" class="screen">
+
+      <div class="card final-card">
+
+        <div class="envelope">
+          💌
+        </div>
+
+        <p class="eyebrow">
+          A little promise
+        </p>
+
+        <h2>
+          I'll choose to know you,
+          not just impress you.
+        </h2>
+
+        <p id="finalText"></p>
+
+        <div class="signature">
+          — Wifey
+        </div>
+
+        <button class="secondary" id="restartBtn">
+          Read it again ↻
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Confetti -->
+  <div id="confetti"></div>
+
+
+  <!-- Optional background music -->
+  <!-- Put music.mp3 in the same folder as this file -->
+
+  <audio id="bgMusic" loop>
+    <source src="Love is.mp4" type="audio/mpeg">
+  </audio>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

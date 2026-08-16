@@ -1,0 +1,685 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pink: #e85d86;
+  --deep-pink: #c83d68;
+  --soft-pink: #ffe7ef;
+  --cream: #fffaf7;
+  --text: #3d2931;
+  --muted: #816a73;
+  --white: #ffffff;
+
+  --shadow:
+    0 24px 70px rgba(122, 52, 77, 0.16);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+
+  font-family: "DM Sans", sans-serif;
+
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(255, 202, 218, .75),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(255, 226, 192, .65),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      135deg,
+      #fff6f8,
+      #fffaf5
+    );
+
+  overflow-x: hidden;
+}
+
+
+/* ================= BUTTONS ================= */
+
+button {
+
+  font: inherit;
+
+  cursor: pointer;
+
+  border: 0;
+}
+
+
+/* ================= SCREENS ================= */
+
+.screen {
+
+  min-height: 100vh;
+
+  min-height: 100svh;
+
+  padding: 32px 18px;
+
+  display: none;
+
+  place-items: center;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.screen.active {
+
+  display: grid;
+
+  animation: screenIn .7s ease both;
+}
+
+
+/* ================= CARD ================= */
+
+.card {
+
+  width: min(680px, 100%);
+
+  padding:
+    clamp(32px, 7vw, 68px);
+
+  background:
+    rgba(255, 255, 255, .78);
+
+  backdrop-filter: blur(16px);
+
+  -webkit-backdrop-filter: blur(16px);
+
+  border:
+    1px solid rgba(255,255,255,.9);
+
+  border-radius: 32px;
+
+  box-shadow: var(--shadow);
+
+  text-align: center;
+}
+
+
+/* ================= TEXT ================= */
+
+.flower {
+
+  font-size: 58px;
+
+  margin-bottom: 18px;
+
+  animation:
+    float 3s ease-in-out infinite;
+}
+
+
+.eyebrow,
+.mini-label {
+
+  color: var(--pink);
+
+  text-transform: uppercase;
+
+  letter-spacing: .16em;
+
+  font-size: .74rem;
+
+  font-weight: 700;
+}
+
+
+h1,
+h2 {
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  line-height: 1.12;
+}
+
+
+h1 {
+
+  min-height: 1.2em;
+
+  margin: 16px 0;
+
+  font-size:
+    clamp(
+      2.4rem,
+      8vw,
+      4.6rem
+    );
+}
+
+
+h2 {
+
+  margin:
+    16px 0 22px;
+
+  font-size:
+    clamp(
+      2rem,
+      5.5vw,
+      3.25rem
+    );
+}
+
+
+p {
+
+  color: var(--muted);
+
+  line-height: 1.8;
+
+  margin: 14px 0;
+}
+
+
+.subtext {
+
+  font-size: .98rem;
+}
+
+
+.highlight {
+
+  color: var(--deep-pink);
+
+  font-weight: 700;
+
+  margin-top: 24px;
+}
+
+
+/* ================= MAIN BUTTON ================= */
+
+.primary {
+
+  margin-top: 22px;
+
+  padding:
+    14px 22px;
+
+  border-radius: 999px;
+
+  color: white;
+
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--pink),
+      var(--deep-pink)
+    );
+
+  box-shadow:
+    0 10px 28px
+    rgba(200, 61, 104, .25);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+
+.primary:hover {
+
+  transform:
+    translateY(-3px)
+    scale(1.02);
+
+  box-shadow:
+    0 15px 35px
+    rgba(200, 61, 104, .3);
+}
+
+
+/* ================= QUESTION ================= */
+
+.question-card {
+
+  overflow: visible;
+}
+
+
+.big-heart {
+
+  width: 92px;
+
+  height: 92px;
+
+  margin:
+    0 auto 20px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    var(--soft-pink);
+
+  color:
+    var(--pink);
+
+  font-size: 60px;
+
+  animation:
+    heartbeat 1.5s infinite;
+}
+
+
+/* ================= YES / NO ================= */
+
+.buttons {
+
+  min-height: 62px;
+
+  margin-top: 30px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 14px;
+
+  position: relative;
+}
+
+
+.yes-btn,
+.no-btn {
+
+  padding:
+    14px 22px;
+
+  border-radius: 999px;
+
+  font-weight: 700;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+
+.yes-btn {
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--pink),
+      var(--deep-pink)
+    );
+
+  box-shadow:
+    0 10px 28px
+    rgba(200, 61, 104, .25);
+
+  z-index: 3;
+}
+
+
+.yes-btn:hover {
+
+  transform:
+    translateY(-3px)
+    scale(1.02);
+}
+
+
+.no-btn {
+
+  color: #715e65;
+
+  background: #f4eef0;
+
+  position: relative;
+
+  z-index: 4;
+}
+
+
+.no-message {
+
+  min-height: 28px;
+
+  color: var(--pink);
+
+  font-weight: 700;
+}
+
+
+/* ================= YES SCREEN ================= */
+
+.celebrate-icon {
+
+  font-size: 64px;
+
+  animation:
+    float 2.6s ease-in-out infinite;
+}
+
+
+/* ================= FINAL SCREEN ================= */
+
+.envelope {
+
+  font-size: 64px;
+
+  animation:
+    float 2.6s ease-in-out infinite;
+}
+
+
+.final-card {
+
+  background:
+    rgba(255, 248, 250, .86);
+}
+
+
+.signature {
+
+  margin-top: 28px;
+
+  color: var(--deep-pink);
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 1.2rem;
+}
+
+
+.secondary {
+
+  margin-top: 24px;
+
+  padding:
+    14px 22px;
+
+  border-radius: 999px;
+
+  color: var(--deep-pink);
+
+  background:
+    var(--soft-pink);
+
+  font-weight: 700;
+
+  transition:
+    transform .2s ease;
+}
+
+
+.secondary:hover {
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* ================= MUSIC ================= */
+
+.music-btn {
+
+  position: fixed;
+
+  top: 18px;
+
+  right: 18px;
+
+  z-index: 20;
+
+  padding:
+    10px 15px;
+
+  border-radius: 999px;
+
+  color: var(--deep-pink);
+
+  background:
+    rgba(255,255,255,.78);
+
+  border:
+    1px solid
+    rgba(255,255,255,.9);
+
+  box-shadow:
+    0 8px 25px
+    rgba(80,40,50,.1);
+
+  backdrop-filter:
+    blur(10px);
+}
+
+
+/* ================= FALLING HEARTS ================= */
+
+#hearts,
+#confetti {
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: 1;
+}
+
+
+.floating-heart {
+
+  position: absolute;
+
+  bottom: -30px;
+
+  opacity: .65;
+
+  animation:
+    rise linear forwards;
+
+  user-select: none;
+}
+
+
+/* ================= CONFETTI ================= */
+
+.confetti-piece {
+
+  position: absolute;
+
+  top: -20px;
+
+  animation:
+    confettiFall linear forwards;
+
+  user-select: none;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes screenIn {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(18px)
+      scale(.98);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+@keyframes float {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(-2deg);
+  }
+
+  50% {
+
+    transform:
+      translateY(-10px)
+      rotate(2deg);
+  }
+}
+
+
+@keyframes heartbeat {
+
+  0%,
+  100% {
+
+    transform: scale(1);
+  }
+
+  15% {
+
+    transform: scale(1.08);
+  }
+
+  30% {
+
+    transform: scale(1);
+  }
+
+  45% {
+
+    transform: scale(1.08);
+  }
+}
+
+
+@keyframes rise {
+
+  from {
+
+    transform:
+      translateY(0)
+      rotate(0deg);
+
+    opacity: 0;
+  }
+
+  15% {
+
+    opacity: .65;
+  }
+
+  to {
+
+    transform:
+      translateY(-110vh)
+      rotate(35deg);
+
+    opacity: 0;
+  }
+}
+
+
+@keyframes confettiFall {
+
+  from {
+
+    transform:
+      translateY(0)
+      rotate(0deg);
+
+    opacity: 1;
+  }
+
+  to {
+
+    transform:
+      translateY(110vh)
+      rotate(720deg);
+
+    opacity: 0;
+  }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 520px) {
+
+  .card {
+
+    padding:
+      34px 22px;
+
+    border-radius:
+      26px;
+  }
+
+
+  .buttons {
+
+    flex-direction:
+      column;
+  }
+
+
+  .yes-btn,
+  .no-btn {
+
+    width:
+      min(260px, 100%);
+  }
+
+
+  .music-btn {
+
+    top: 12px;
+
+    right: 12px;
+  }
+}
